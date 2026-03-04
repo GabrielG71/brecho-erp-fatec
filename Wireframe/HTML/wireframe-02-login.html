@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Wireframe 02 – Login</title>
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Courier New',monospace;font-size:11px;background:#fff;color:#111;padding:24px}
+  @page{size:A4 portrait;margin:15mm}
+  @media print{body{padding:0}.no-print{display:none}}
+
+  .wf-title{font-size:15px;font-weight:bold;text-transform:uppercase;letter-spacing:2px;border-bottom:2px solid #000;padding-bottom:6px;margin-bottom:4px}
+  .wf-sub{font-size:9px;color:#666;margin-bottom:18px}
+  .label{font-size:8px;font-weight:bold;text-transform:uppercase;color:#555;margin-bottom:3px}
+  .sec{border:2px solid #111;margin-bottom:12px;padding:8px;position:relative}
+  .sec-tag{position:absolute;top:-1px;left:-1px;background:#111;color:#fff;font-size:8px;font-weight:bold;padding:2px 7px;text-transform:uppercase}
+  .inner{margin-top:14px}
+  .box{border:1.5px solid #333;padding:5px 8px;text-align:center;font-size:9px;line-height:1.4;background:#fff}
+  .box.fill{background:#d0d0d0}
+  .box.dark{background:#aaa}
+  .row{display:flex;gap:6px;margin-bottom:6px;align-items:stretch}
+  .col{display:flex;flex-direction:column;gap:6px}
+  .f1{flex:1}.f2{flex:2}.f3{flex:3}
+  .input-field{border:1.5px solid #333;padding:7px 10px;font-size:9px;font-family:'Courier New',monospace;background:#f8f8f8;text-align:left}
+  .divider{border:none;border-top:1.5px dashed #bbb;margin:6px 0}
+</style>
+</head>
+<body>
+
+<div class="wf-title no-print">VINTAGEHUB · WIREFRAME 02 — PÁGINA DE LOGIN</div>
+<div class="wf-sub no-print">Esboço estrutural · Imprimível via Ctrl+P</div>
+
+<!-- NAVBAR simplificada -->
+<div class="sec">
+  <span class="sec-tag">NAVBAR (simplificada — sem links de categoria)</span>
+  <div class="inner row" style="align-items:center">
+    <div class="box fill" style="width:120px;font-size:10px;font-weight:bold;padding:8px">⊞ VintageHub · Logo</div>
+    <div class="f1"></div>
+    <div class="box" style="font-size:8px;padding:5px 10px">← Voltar à Loja</div>
+  </div>
+</div>
+
+<!-- LAYOUT PRINCIPAL: 2 colunas -->
+<div class="sec">
+  <span class="sec-tag">ÁREA CENTRAL DE LOGIN — 2 COLUNAS</span>
+  <div class="inner row" style="min-height:420px;align-items:stretch">
+
+    <!-- COLUNA ESQUERDA: branding / imagem -->
+    <div class="f1 col" style="border:1.5px solid #333;padding:10px;background:#f0f0f0;align-items:center;justify-content:center;gap:10px">
+      <div style="border:1.5px solid #333;background:repeating-linear-gradient(45deg,#d8d8d8,#d8d8d8 4px,#f0f0f0 4px,#f0f0f0 9px);height:140px;width:100%;display:flex;align-items:center;justify-content:center;font-size:9px;color:#666">Imagem / Ilustração<br>de Branding</div>
+      <div class="box" style="font-size:13px;font-weight:bold;padding:8px;width:100%">⊞ VintageHub</div>
+      <div class="box" style="font-size:8px;color:#555;width:100%">Tagline — "Estilo vintage,<br>alma atemporal"</div>
+      <div class="col" style="width:100%;gap:4px">
+        <div class="box fill" style="font-size:8px;text-align:left;padding:4px 8px">✦ Peças únicas autenticadas</div>
+        <div class="box fill" style="font-size:8px;text-align:left;padding:4px 8px">✦ Frete grátis acima de R$ 200</div>
+        <div class="box fill" style="font-size:8px;text-align:left;padding:4px 8px">✦ Devolução em 30 dias</div>
+      </div>
+    </div>
+
+    <!-- COLUNA DIREITA: formulário -->
+    <div class="f1 col" style="padding:10px;justify-content:center">
+      <!-- Tabs Login / Cadastro -->
+      <div class="row" style="margin-bottom:10px">
+        <div class="box dark f1" style="font-size:9px;font-weight:bold;padding:7px">[ ABA: Entrar ]</div>
+        <div class="box f1" style="font-size:9px;padding:7px">[ ABA: Cadastrar ]</div>
+      </div>
+
+      <!-- Título -->
+      <div class="box" style="font-size:12px;font-weight:bold;margin-bottom:8px;padding:6px">Bem-vindo de volta</div>
+      <div class="box" style="font-size:8px;color:#666;margin-bottom:10px">Subtítulo — "Entre na sua conta para continuar"</div>
+
+      <!-- Formulário -->
+      <div class="label">Campo: E-mail</div>
+      <div class="input-field" style="margin-bottom:6px">___ E-mail ou usuário ___________________________</div>
+
+      <div class="label">Campo: Senha</div>
+      <div class="input-field" style="margin-bottom:2px">___ Senha ● ● ● ● ● ● ● ● _______________________</div>
+
+      <div class="row" style="justify-content:space-between;margin-bottom:8px;align-items:center">
+        <div class="row" style="margin-bottom:0;gap:4px;align-items:center">
+          <div class="box" style="width:12px;height:12px;padding:0"></div>
+          <span style="font-size:8px">Lembrar de mim</span>
+        </div>
+        <div class="box" style="font-size:8px;padding:3px 7px;border-style:dashed">Link: Esqueci minha senha</div>
+      </div>
+
+      <!-- Botão principal -->
+      <div class="box dark" style="font-size:10px;font-weight:bold;padding:10px;margin-bottom:8px">[ BTN PRIMÁRIO: ENTRAR ]</div>
+
+      <hr class="divider">
+      <div class="box" style="font-size:8px;margin-bottom:6px">— ou entre com —</div>
+
+      <!-- Login social -->
+      <div class="row" style="margin-bottom:10px">
+        <div class="box f1" style="font-size:8px;padding:6px">[ G ] Entrar com Google</div>
+        <div class="box f1" style="font-size:8px;padding:6px">[ F ] Entrar com Facebook</div>
+      </div>
+
+      <!-- Criar conta -->
+      <div class="box fill" style="font-size:8px;padding:6px">Não tem conta? <strong>Criar conta gratuita →</strong></div>
+
+      <!-- Aviso admin -->
+      <div class="box" style="font-size:8px;margin-top:8px;border-style:dashed;color:#555;padding:6px">
+        🔒 Acesso Admin: ao logar com conta administrador,<br>
+        você será redirecionado ao <strong>Dashboard Administrativo</strong>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ESTADO: Esqueci a senha (modal/tela alternativa) -->
+<div class="sec">
+  <span class="sec-tag">ESTADO ALTERNATIVO — RECUPERAR SENHA (modal ou tela)</span>
+  <div class="inner" style="max-width:400px;margin:0 auto">
+    <div class="box" style="font-size:11px;font-weight:bold;margin-bottom:6px">Recuperar senha</div>
+    <div class="box" style="font-size:8px;color:#666;margin-bottom:8px">Informe seu e-mail e enviaremos as instruções de redefinição.</div>
+    <div class="label">Campo: E-mail</div>
+    <div class="input-field" style="margin-bottom:6px">___ seu@email.com _______________________________</div>
+    <div class="row">
+      <div class="box dark f1" style="font-size:9px;padding:7px">[ BTN: Enviar Link ]</div>
+      <div class="box f1" style="font-size:9px;padding:7px">[ BTN: Cancelar ]</div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER mínimo -->
+<div class="sec">
+  <span class="sec-tag">FOOTER MÍNIMO</span>
+  <div class="inner">
+    <div class="box" style="font-size:8px;text-align:center;background:#f0f0f0">
+      © 2026 VintageHub &nbsp;·&nbsp; Termos de uso &nbsp;·&nbsp; Política de privacidade
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

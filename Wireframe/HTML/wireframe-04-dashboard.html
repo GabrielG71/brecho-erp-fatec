@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Wireframe 04 – Dashboard Admin</title>
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Courier New',monospace;font-size:11px;background:#fff;color:#111;padding:24px}
+  @page{size:A4 landscape;margin:12mm}
+  @media print{body{padding:0}.no-print{display:none}}
+
+  .wf-title{font-size:15px;font-weight:bold;text-transform:uppercase;letter-spacing:2px;border-bottom:2px solid #000;padding-bottom:6px;margin-bottom:4px}
+  .wf-sub{font-size:9px;color:#666;margin-bottom:18px}
+  .label{font-size:8px;font-weight:bold;text-transform:uppercase;color:#555;margin-bottom:3px}
+  .sec{border:2px solid #111;margin-bottom:10px;padding:8px;position:relative}
+  .sec-tag{position:absolute;top:-1px;left:-1px;background:#111;color:#fff;font-size:8px;font-weight:bold;padding:2px 7px;text-transform:uppercase}
+  .inner{margin-top:14px}
+  .box{border:1.5px solid #333;padding:5px 8px;text-align:center;font-size:9px;line-height:1.4;background:#fff}
+  .box.fill{background:#d0d0d0}
+  .box.dark{background:#aaa}
+  .box.black{background:#222;color:#fff}
+  .row{display:flex;gap:6px;margin-bottom:6px;align-items:stretch}
+  .col{display:flex;flex-direction:column;gap:6px}
+  .f1{flex:1}.f2{flex:2}.f3{flex:3}.f4{flex:4}.f5{flex:5}
+  .divider{border:none;border-top:1.5px dashed #bbb;margin:5px 0}
+  .nav-item{border:1.5px solid #333;padding:5px 8px;font-size:9px;display:flex;align-items:center;gap:5px;cursor:pointer}
+  .nav-item.active{background:#333;color:#fff}
+  .nav-item.active span{color:#fff}
+  .nav-section{font-size:7px;font-weight:bold;color:#888;text-transform:uppercase;padding:4px 0 2px;letter-spacing:.5px}
+  .kpi{border:2px solid #333;padding:8px;flex:1}
+  .kpi .kpi-val{font-size:18px;font-weight:bold;padding:6px 0}
+  .kpi .kpi-label{font-size:8px;color:#555}
+  .kpi .kpi-delta{font-size:8px;border:1px solid #aaa;padding:1px 5px;display:inline-block;margin-top:3px}
+  .table-row{display:flex;gap:0;border-bottom:1px solid #ddd;font-size:8px}
+  .table-row > div{padding:4px 6px;border-right:1px solid #ddd;font-size:8px}
+  .table-head{background:#d0d0d0;font-weight:bold}
+  .badge-status{display:inline-block;border:1px solid #333;padding:1px 5px;font-size:7px;font-weight:bold}
+  .mini-bar{background:#d0d0d0;height:8px;border:1px solid #333;margin-bottom:3px;position:relative}
+  .mini-bar-fill{background:#555;height:100%;position:absolute;top:0;left:0}
+  .input-field{border:1.5px solid #333;padding:5px 8px;font-size:8px;font-family:'Courier New',monospace;background:#f8f8f8}
+</style>
+</head>
+<body>
+
+<div class="wf-title no-print">VINTAGEHUB · WIREFRAME 04 — DASHBOARD ADMINISTRATIVA</div>
+<div class="wf-sub no-print">Esboço estrutural · Acesso exclusivo admin · Imprimível via Ctrl+P</div>
+
+<!-- ═══ TOP BAR ═══ -->
+<div class="sec">
+  <span class="sec-tag">TOP BAR — BARRA SUPERIOR ADMIN</span>
+  <div class="inner row" style="align-items:center">
+    <div class="box black" style="width:120px;font-size:10px;font-weight:bold;padding:8px">⊞ VintageHub<br><span style="font-size:7px;font-weight:normal">Admin Panel</span></div>
+    <div class="box fill" style="font-size:8px;padding:5px 10px">Campo: Busca global (pedidos, produtos, clientes...)</div>
+    <div class="f1"></div>
+    <div class="row" style="margin-bottom:0;gap:5px;align-items:center">
+      <div class="box" style="font-size:8px;padding:4px 8px">🔔 Notificações <strong>(5)</strong></div>
+      <div class="box fill" style="font-size:8px;padding:4px 8px">👤 Admin · João<br><span style="font-size:7px">Super Admin ▼</span></div>
+      <div class="box" style="font-size:8px;padding:4px 8px;border-style:dashed">← Ver Loja</div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ LAYOUT PRINCIPAL: Sidebar + Conteúdo ═══ -->
+<div class="sec">
+  <span class="sec-tag">LAYOUT PRINCIPAL — SIDEBAR ESQUERDA + CONTEÚDO</span>
+  <div class="inner row" style="align-items:flex-start;min-height:520px">
+
+    <!-- SIDEBAR NAV -->
+    <div class="col" style="width:130px;flex-shrink:0;border:1.5px solid #333;padding:6px;gap:2px">
+      <div class="nav-section">PRINCIPAL</div>
+      <div class="nav-item active">📊 <span>Dashboard</span></div>
+      <div class="nav-item">📦 <span>Pedidos</span></div>
+      <div class="nav-item">👥 <span>Clientes</span></div>
+      <div class="nav-section">ESTOQUE</div>
+      <div class="nav-item">🏷️ <span>Produtos</span></div>
+      <div class="nav-item">📂 <span>Categorias</span></div>
+      <div class="nav-item">📥 <span>Entrada Peças</span></div>
+      <div class="nav-item">⚠️ <span>Estoque Baixo</span></div>
+      <div class="nav-section">FINANCEIRO</div>
+      <div class="nav-item">💰 <span>Receitas</span></div>
+      <div class="nav-item">📈 <span>Relatórios</span></div>
+      <div class="nav-item">🎟️ <span>Cupons</span></div>
+      <div class="nav-section">CONFIGURAÇÕES</div>
+      <div class="nav-item">⚙️ <span>Loja</span></div>
+      <div class="nav-item">👤 <span>Usuários Admin</span></div>
+      <div class="nav-item">🚚 <span>Fretes</span></div>
+      <div class="nav-item">🔒 <span>Sair</span></div>
+    </div>
+
+    <!-- CONTEÚDO PRINCIPAL -->
+    <div class="f1 col">
+
+      <!-- Linha de KPIs -->
+      <div class="label">KPIs — INDICADORES RÁPIDOS</div>
+      <div class="row">
+        <div class="kpi">
+          <div class="kpi-label">Receita do Mês</div>
+          <div class="kpi-val">R$ 00.000</div>
+          <div class="kpi-delta">↑ +00% vs mês ant.</div>
+        </div>
+        <div class="kpi">
+          <div class="kpi-label">Pedidos Hoje</div>
+          <div class="kpi-val">00</div>
+          <div class="kpi-delta">↑ +0 vs ontem</div>
+        </div>
+        <div class="kpi">
+          <div class="kpi-label">Produtos Ativos</div>
+          <div class="kpi-val">000</div>
+          <div class="kpi-delta">→ 0 novos</div>
+        </div>
+        <div class="kpi">
+          <div class="kpi-label">Ticket Médio</div>
+          <div class="kpi-val">R$ 000</div>
+          <div class="kpi-delta">↓ −0% vs mês ant.</div>
+        </div>
+        <div class="kpi">
+          <div class="kpi-label">Clientes Ativos</div>
+          <div class="kpi-val">0.000</div>
+          <div class="kpi-delta">↑ +00 novos</div>
+        </div>
+      </div>
+
+      <!-- Gráfico + Pedidos recentes -->
+      <div class="row" style="align-items:flex-start">
+
+        <!-- Gráfico de vendas -->
+        <div class="f2 col" style="border:1.5px solid #333;padding:8px">
+          <div class="box fill" style="font-size:9px;font-weight:bold;margin-bottom:6px;text-align:left">📈 GRÁFICO — Vendas (últimos 30 dias)</div>
+          <div style="border:1.5px solid #aaa;height:90px;background:repeating-linear-gradient(90deg,#f0f0f0,#f0f0f0 1px,transparent 1px,transparent 10%);display:flex;align-items:flex-end;padding:4px;gap:3px">
+            <!-- Barras simuladas -->
+            <div style="flex:1;background:#aaa;height:40%"></div>
+            <div style="flex:1;background:#aaa;height:55%"></div>
+            <div style="flex:1;background:#aaa;height:35%"></div>
+            <div style="flex:1;background:#aaa;height:70%"></div>
+            <div style="flex:1;background:#aaa;height:50%"></div>
+            <div style="flex:1;background:#aaa;height:80%"></div>
+            <div style="flex:1;background:#aaa;height:60%"></div>
+            <div style="flex:1;background:#333;height:90%"></div>
+            <div style="flex:1;background:#aaa;height:65%"></div>
+            <div style="flex:1;background:#aaa;height:75%"></div>
+          </div>
+          <div class="row" style="justify-content:space-between;margin-top:3px;margin-bottom:0">
+            <span style="font-size:7px;color:#888">Dia 1</span>
+            <span style="font-size:7px;color:#888">Dia 10</span>
+            <span style="font-size:7px;color:#888">Dia 20</span>
+            <span style="font-size:7px;color:#888">Hoje</span>
+          </div>
+          <!-- Filtros período -->
+          <div class="row" style="margin-top:4px;margin-bottom:0;gap:3px">
+            <div class="box dark" style="font-size:7px;padding:2px 5px">7 dias</div>
+            <div class="box" style="font-size:7px;padding:2px 5px">30 dias</div>
+            <div class="box" style="font-size:7px;padding:2px 5px">3 meses</div>
+            <div class="box" style="font-size:7px;padding:2px 5px">Ano</div>
+          </div>
+        </div>
+
+        <!-- Pedidos recentes -->
+        <div class="f2 col" style="border:1.5px solid #333;padding:8px">
+          <div class="box fill" style="font-size:9px;font-weight:bold;margin-bottom:6px;text-align:left">📦 PEDIDOS RECENTES</div>
+          <!-- Tabela -->
+          <div class="table-row table-head">
+            <div style="flex:1">Pedido</div>
+            <div style="flex:2">Cliente</div>
+            <div style="flex:1">Valor</div>
+            <div style="flex:1">Status</div>
+            <div style="flex:1">Ação</div>
+          </div>
+          <div class="table-row"><div style="flex:1">#VH-001</div><div style="flex:2">João S.</div><div style="flex:1">R$ 289,90</div><div style="flex:1"><span class="badge-status">Enviado</span></div><div style="flex:1">[ Ver ]</div></div>
+          <div class="table-row"><div style="flex:1">#VH-002</div><div style="flex:2">Maria L.</div><div style="flex:1">R$ 159,90</div><div style="flex:1"><span class="badge-status">Pago</span></div><div style="flex:1">[ Ver ]</div></div>
+          <div class="table-row"><div style="flex:1">#VH-003</div><div style="flex:2">Ana P.</div><div style="flex:1">R$ 89,90</div><div style="flex:1"><span class="badge-status fill">Pendente</span></div><div style="flex:1">[ Ver ]</div></div>
+          <div class="table-row"><div style="flex:1">#VH-004</div><div style="flex:2">Carlos M.</div><div style="flex:1">R$ 449,80</div><div style="flex:1"><span class="badge-status">Enviado</span></div><div style="flex:1">[ Ver ]</div></div>
+          <div class="table-row"><div style="flex:1">#VH-005</div><div style="flex:2">Bruna T.</div><div style="flex:1">R$ 199,90</div><div style="flex:1"><span class="badge-status" style="background:#aaa">Cancelado</span></div><div style="flex:1">[ Ver ]</div></div>
+          <div class="box" style="font-size:8px;margin-top:4px;border-style:dashed">[ Ver todos os pedidos → ]</div>
+        </div>
+
+      </div>
+
+      <!-- Estoque + Produtos -->
+      <div class="row" style="align-items:flex-start">
+
+        <!-- Estoque por categoria -->
+        <div class="f1 col" style="border:1.5px solid #333;padding:8px">
+          <div class="box fill" style="font-size:9px;font-weight:bold;margin-bottom:6px;text-align:left">🗄️ ESTOQUE POR CATEGORIA</div>
+          <div style="font-size:8px;margin-bottom:3px">Jaquetas (00 peças)</div>
+          <div class="mini-bar"><div class="mini-bar-fill" style="width:75%"></div></div>
+          <div style="font-size:8px;margin-bottom:3px">Calças (00 peças)</div>
+          <div class="mini-bar"><div class="mini-bar-fill" style="width:60%"></div></div>
+          <div style="font-size:8px;margin-bottom:3px">Vestidos (00 peças)</div>
+          <div class="mini-bar"><div class="mini-bar-fill" style="width:45%"></div></div>
+          <div style="font-size:8px;margin-bottom:3px">Acessórios (00 peças)</div>
+          <div class="mini-bar"><div class="mini-bar-fill" style="width:30%"></div></div>
+          <div style="font-size:8px;margin-bottom:3px">Calçados (00 peças) ⚠️</div>
+          <div class="mini-bar"><div class="mini-bar-fill" style="width:15%"></div></div>
+          <div class="box" style="font-size:7px;margin-top:4px;border-style:dashed;color:#c00">⚠️ 3 categorias com estoque baixo</div>
+        </div>
+
+        <!-- Gestão de produtos rápida -->
+        <div class="f2 col" style="border:1.5px solid #333;padding:8px">
+          <div class="box fill" style="font-size:9px;font-weight:bold;margin-bottom:4px;text-align:left">🏷️ GESTÃO DE PRODUTOS</div>
+          <div class="row">
+            <div class="input-field f2">🔍 Buscar produto...</div>
+            <div class="box dark f1" style="font-size:8px;padding:5px">[ + Novo Produto ]</div>
+          </div>
+          <!-- Tabela produtos -->
+          <div class="table-row table-head">
+            <div style="width:30px">Foto</div>
+            <div style="flex:3">Nome</div>
+            <div style="flex:1">Cat.</div>
+            <div style="flex:1">Preço</div>
+            <div style="flex:1">Estoque</div>
+            <div style="flex:1">Status</div>
+            <div style="flex:1">Ações</div>
+          </div>
+          <div class="table-row">
+            <div style="width:30px;background:#e0e0e0;height:24px"></div>
+            <div style="flex:3">Jaqueta de Couro Vintage</div>
+            <div style="flex:1">Jaq.</div>
+            <div style="flex:1">289,90</div>
+            <div style="flex:1">3</div>
+            <div style="flex:1"><span class="badge-status">Ativo</span></div>
+            <div style="flex:1">✏️ 🗑</div>
+          </div>
+          <div class="table-row">
+            <div style="width:30px;background:#e0e0e0;height:24px"></div>
+            <div style="flex:3">Calça Jeans High Waist</div>
+            <div style="flex:1">Cal.</div>
+            <div style="flex:1">159,90</div>
+            <div style="flex:1">1</div>
+            <div style="flex:1"><span class="badge-status" style="background:#aaa">Baixo</span></div>
+            <div style="flex:1">✏️ 🗑</div>
+          </div>
+          <div class="table-row">
+            <div style="width:30px;background:#e0e0e0;height:24px"></div>
+            <div style="flex:3">Óculos Vintage Aviador</div>
+            <div style="flex:1">Ace.</div>
+            <div style="flex:1">89,90</div>
+            <div style="flex:1">5</div>
+            <div style="flex:1"><span class="badge-status">Ativo</span></div>
+            <div style="flex:1">✏️ 🗑</div>
+          </div>
+          <div class="table-row">
+            <div style="width:30px;background:#e0e0e0;height:24px"></div>
+            <div style="flex:3">Blazer Vintage Estruturado</div>
+            <div style="flex:1">Bla.</div>
+            <div style="flex:1">199,90</div>
+            <div style="flex:1">0</div>
+            <div style="flex:1"><span class="badge-status fill">Esgotado</span></div>
+            <div style="flex:1">✏️ 🗑</div>
+          </div>
+          <div class="row" style="margin-top:2px;margin-bottom:0">
+            <div class="box f1" style="font-size:7px;border-style:dashed;padding:3px">Paginação: ← 1 2 3 ... →</div>
+            <div class="box f1" style="font-size:7px;padding:3px">Exibindo 4 de 000 produtos</div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Alertas + Entrada de peças -->
+      <div class="row" style="align-items:flex-start">
+
+        <!-- Alertas do sistema -->
+        <div class="f1 col" style="border:1.5px solid #333;padding:8px">
+          <div class="box fill" style="font-size:9px;font-weight:bold;margin-bottom:4px;text-align:left">🔔 ALERTAS DO SISTEMA</div>
+          <div class="box" style="text-align:left;font-size:8px;padding:4px 6px;border-left:3px solid #333;margin-bottom:3px">⚠️ <strong>Estoque baixo:</strong> Calçados (2 un.)</div>
+          <div class="box" style="text-align:left;font-size:8px;padding:4px 6px;border-left:3px solid #333;margin-bottom:3px">📦 <strong>Pedido aguardando:</strong> #VH-003 pendente há 2h</div>
+          <div class="box" style="text-align:left;font-size:8px;padding:4px 6px;border-left:3px solid #333;margin-bottom:3px">🎟️ <strong>Cupom expirando:</strong> VINTAGE10 em 2 dias</div>
+          <div class="box" style="text-align:left;font-size:8px;padding:4px 6px;border-left:3px solid #333">💬 <strong>Avaliação negativa:</strong> Produto #VH-032</div>
+        </div>
+
+        <!-- Entrada de novas peças -->
+        <div class="f2 col" style="border:1.5px solid #333;padding:8px">
+          <div class="box fill" style="font-size:9px;font-weight:bold;margin-bottom:4px;text-align:left">📥 CADASTRAR NOVA PEÇA (Entrada Brechó)</div>
+          <div class="row">
+            <div class="col f2"><div class="label">Nome da peça</div><div class="input-field">________________________</div></div>
+            <div class="col f1"><div class="label">Categoria</div><div class="input-field">Selecionar ▼</div></div>
+          </div>
+          <div class="row">
+            <div class="col f1"><div class="label">Preço</div><div class="input-field">R$ ________</div></div>
+            <div class="col f1"><div class="label">Preço original</div><div class="input-field">R$ ________</div></div>
+            <div class="col f1"><div class="label">Estado</div><div class="input-field">Selecionar ▼</div></div>
+            <div class="col f1"><div class="label">Tamanho</div><div class="input-field">______</div></div>
+          </div>
+          <div class="row">
+            <div class="col f2">
+              <div class="label">Descrição</div>
+              <div style="border:1.5px solid #333;height:36px;background:#f8f8f8;padding:4px;font-size:8px;color:#888">Descrição detalhada da peça...</div>
+            </div>
+            <div class="col f1">
+              <div class="label">Fotos</div>
+              <div style="border:1.5px dashed #333;height:36px;display:flex;align-items:center;justify-content:center;font-size:8px;color:#888;background:#f8f8f8">[+] Upload Fotos</div>
+            </div>
+          </div>
+          <div class="row" style="margin-bottom:0">
+            <div class="box dark f1" style="font-size:9px;padding:7px">[ Salvar Produto ]</div>
+            <div class="box f1" style="font-size:9px;padding:7px">[ Salvar Rascunho ]</div>
+            <div class="box f1" style="font-size:9px;padding:7px">[ Cancelar ]</div>
+          </div>
+        </div>
+
+      </div>
+
+    </div><!-- /conteúdo -->
+  </div><!-- /layout -->
+</div>
+
+</body>
+</html>

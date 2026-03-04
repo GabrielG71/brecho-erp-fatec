@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Wireframe 03 – Carrinho</title>
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Courier New',monospace;font-size:11px;background:#fff;color:#111;padding:24px}
+  @page{size:A4 landscape;margin:15mm}
+  @media print{body{padding:0}.no-print{display:none}}
+
+  .wf-title{font-size:15px;font-weight:bold;text-transform:uppercase;letter-spacing:2px;border-bottom:2px solid #000;padding-bottom:6px;margin-bottom:4px}
+  .wf-sub{font-size:9px;color:#666;margin-bottom:18px}
+  .label{font-size:8px;font-weight:bold;text-transform:uppercase;color:#555;margin-bottom:3px}
+  .sec{border:2px solid #111;margin-bottom:10px;padding:8px;position:relative}
+  .sec-tag{position:absolute;top:-1px;left:-1px;background:#111;color:#fff;font-size:8px;font-weight:bold;padding:2px 7px;text-transform:uppercase}
+  .inner{margin-top:14px}
+  .box{border:1.5px solid #333;padding:5px 8px;text-align:center;font-size:9px;line-height:1.4;background:#fff}
+  .box.fill{background:#d0d0d0}
+  .box.dark{background:#aaa}
+  .row{display:flex;gap:6px;margin-bottom:6px;align-items:stretch}
+  .col{display:flex;flex-direction:column;gap:6px}
+  .f1{flex:1}.f2{flex:2}.f3{flex:3}.f4{flex:4}
+  .img{border:1.5px solid #333;background:repeating-linear-gradient(45deg,#e0e0e0,#e0e0e0 4px,#f8f8f8 4px,#f8f8f8 9px);display:flex;align-items:center;justify-content:center;font-size:8px;color:#666;text-align:center}
+  .divider{border:none;border-top:1.5px dashed #bbb;margin:5px 0}
+  .step{border:2px solid #333;width:22px;height:22px;display:flex;align-items:center;justify-content:center;font-size:8px;font-weight:bold;flex-shrink:0}
+  .step.active{background:#333;color:#fff}
+  .input-field{border:1.5px solid #333;padding:6px 8px;font-size:8px;font-family:'Courier New',monospace;background:#f8f8f8;text-align:left;width:100%}
+</style>
+</head>
+<body>
+
+<div class="wf-title no-print">VINTAGEHUB · WIREFRAME 03 — CARRINHO & CHECKOUT</div>
+<div class="wf-sub no-print">Esboço estrutural · Imprimível via Ctrl+P</div>
+
+<!-- NAVBAR -->
+<div class="sec">
+  <span class="sec-tag">NAVBAR</span>
+  <div class="inner row" style="align-items:center">
+    <div class="box fill" style="width:110px;font-size:10px;font-weight:bold;padding:8px">⊞ VintageHub · Logo</div>
+    <div class="f1"></div>
+    <div class="row" style="margin-bottom:0;gap:5px;align-items:center">
+      <div class="box" style="font-size:8px;padding:5px 10px">← Continuar Comprando</div>
+      <div style="border:1.5px solid #333;width:22px;height:22px;display:flex;align-items:center;justify-content:center;font-size:9px">👤</div>
+      <div style="border:1.5px solid #333;width:22px;height:22px;display:flex;align-items:center;justify-content:center;font-size:9px">🛒<span style="font-size:6px">3</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- STEPPER DE PROGRESSO -->
+<div class="sec">
+  <span class="sec-tag">STEPPER — PROGRESSO DO CHECKOUT</span>
+  <div class="inner row" style="justify-content:center;align-items:center;gap:0">
+    <div class="step active">1</div>
+    <div class="box dark" style="font-size:9px;font-weight:bold;padding:4px 10px;border-width:2px">CARRINHO</div>
+    <div style="border-top:2px dashed #aaa;width:30px"></div>
+    <div class="step">2</div>
+    <div class="box" style="font-size:9px;padding:4px 10px;color:#999">ENTREGA</div>
+    <div style="border-top:2px dashed #aaa;width:30px"></div>
+    <div class="step">3</div>
+    <div class="box" style="font-size:9px;padding:4px 10px;color:#999">PAGAMENTO</div>
+    <div style="border-top:2px dashed #aaa;width:30px"></div>
+    <div class="step">4</div>
+    <div class="box" style="font-size:9px;padding:4px 10px;color:#999">CONFIRMAÇÃO</div>
+  </div>
+</div>
+
+<!-- CONTEÚDO PRINCIPAL: Itens + Resumo -->
+<div class="sec">
+  <span class="sec-tag">TELA 1 DE 4 — CARRINHO (itens + resumo)</span>
+  <div class="inner row" style="align-items:flex-start">
+
+    <!-- LISTA DE ITENS -->
+    <div class="f3 col">
+      <div class="box fill" style="font-size:11px;font-weight:bold;padding:7px;text-align:left">🛒 Meu Carrinho (3 itens)</div>
+
+      <!-- Item 1 -->
+      <div class="row" style="border:1.5px solid #333;padding:6px;margin-bottom:0;align-items:center">
+        <div class="img" style="width:60px;height:60px;flex-shrink:0">Foto<br>Produto</div>
+        <div class="col f3" style="gap:3px">
+          <div class="box" style="text-align:left;font-size:8px;color:#777">Categoria → Jaquetas</div>
+          <div class="box" style="text-align:left;font-size:9px;font-weight:bold">Nome do Produto — Jaqueta de Couro Vintage</div>
+          <div class="row" style="margin-bottom:0;gap:4px">
+            <div class="box fill" style="font-size:8px">Tam: M</div>
+            <div class="box fill" style="font-size:8px">Cor: Marrom</div>
+            <div class="box fill" style="font-size:8px">Estado: Ótimo</div>
+          </div>
+        </div>
+        <div class="col" style="align-items:center;gap:4px;flex-shrink:0">
+          <div class="row" style="margin-bottom:0;gap:2px;align-items:center">
+            <div class="box" style="width:20px;height:20px;padding:0;font-weight:bold">−</div>
+            <div class="box fill" style="width:24px;height:20px;padding:0;font-size:9px">1</div>
+            <div class="box" style="width:20px;height:20px;padding:0;font-weight:bold">+</div>
+          </div>
+          <div class="box fill" style="font-size:10px;font-weight:bold;padding:4px 8px">R$ 289,90</div>
+          <div class="box" style="font-size:7px;padding:2px 6px;border-style:dashed">🗑 Remover</div>
+        </div>
+      </div>
+
+      <!-- Item 2 -->
+      <div class="row" style="border:1.5px solid #333;padding:6px;margin-bottom:0;align-items:center">
+        <div class="img" style="width:60px;height:60px;flex-shrink:0">Foto<br>Produto</div>
+        <div class="col f3" style="gap:3px">
+          <div class="box" style="text-align:left;font-size:8px;color:#777">Categoria → Calças</div>
+          <div class="box" style="text-align:left;font-size:9px;font-weight:bold">Nome do Produto — Calça Jeans Vintage High Waist</div>
+          <div class="row" style="margin-bottom:0;gap:4px">
+            <div class="box fill" style="font-size:8px">Tam: 38</div>
+            <div class="box fill" style="font-size:8px">Estado: Semi-novo</div>
+          </div>
+        </div>
+        <div class="col" style="align-items:center;gap:4px;flex-shrink:0">
+          <div class="row" style="margin-bottom:0;gap:2px;align-items:center">
+            <div class="box" style="width:20px;height:20px;padding:0;font-weight:bold">−</div>
+            <div class="box fill" style="width:24px;height:20px;padding:0;font-size:9px">1</div>
+            <div class="box" style="width:20px;height:20px;padding:0;font-weight:bold">+</div>
+          </div>
+          <div class="box fill" style="font-size:10px;font-weight:bold;padding:4px 8px">R$ 159,90</div>
+          <div class="box" style="font-size:7px;padding:2px 6px;border-style:dashed">🗑 Remover</div>
+        </div>
+      </div>
+
+      <!-- Item 3 -->
+      <div class="row" style="border:1.5px solid #333;padding:6px;margin-bottom:0;align-items:center">
+        <div class="img" style="width:60px;height:60px;flex-shrink:0">Foto<br>Produto</div>
+        <div class="col f3" style="gap:3px">
+          <div class="box" style="text-align:left;font-size:8px;color:#777">Categoria → Acessórios</div>
+          <div class="box" style="text-align:left;font-size:9px;font-weight:bold">Nome do Produto — Óculos Vintage Aviador</div>
+          <div class="row" style="margin-bottom:0;gap:4px">
+            <div class="box fill" style="font-size:8px">Único</div>
+            <div class="box fill" style="font-size:8px">Estado: Perfeito</div>
+          </div>
+        </div>
+        <div class="col" style="align-items:center;gap:4px;flex-shrink:0">
+          <div class="row" style="margin-bottom:0;gap:2px;align-items:center">
+            <div class="box" style="width:20px;height:20px;padding:0;font-weight:bold">−</div>
+            <div class="box fill" style="width:24px;height:20px;padding:0;font-size:9px">1</div>
+            <div class="box" style="width:20px;height:20px;padding:0;font-weight:bold">+</div>
+          </div>
+          <div class="box fill" style="font-size:10px;font-weight:bold;padding:4px 8px">R$ 89,90</div>
+          <div class="box" style="font-size:7px;padding:2px 6px;border-style:dashed">🗑 Remover</div>
+        </div>
+      </div>
+
+      <!-- Cupom -->
+      <div class="box fill" style="text-align:left;font-size:9px;font-weight:bold;padding:6px">CUPOM DE DESCONTO</div>
+      <div class="row" style="margin-bottom:0">
+        <div class="input-field f3">___ Código do cupom ______________________</div>
+        <div class="box dark f1" style="font-size:9px;padding:6px">[ Aplicar ]</div>
+      </div>
+    </div>
+
+    <!-- RESUMO DO PEDIDO -->
+    <div class="f1 col" style="border:2px solid #111;padding:8px">
+      <div class="box fill" style="font-size:10px;font-weight:bold;padding:7px;margin-bottom:4px">RESUMO DO PEDIDO</div>
+
+      <div class="row" style="margin-bottom:2px;justify-content:space-between">
+        <span style="font-size:9px">Subtotal (3 itens)</span>
+        <span style="font-size:9px;font-weight:bold">R$ 539,70</span>
+      </div>
+      <div class="row" style="margin-bottom:2px;justify-content:space-between">
+        <span style="font-size:9px">Desconto cupom</span>
+        <span style="font-size:9px;color:#555">— R$ 00,00</span>
+      </div>
+      <div class="row" style="margin-bottom:2px;justify-content:space-between">
+        <span style="font-size:9px">Frete estimado</span>
+        <span style="font-size:9px;color:#555">R$ 00,00</span>
+      </div>
+      <hr class="divider">
+      <div class="row" style="margin-bottom:6px;justify-content:space-between;align-items:center">
+        <span style="font-size:10px;font-weight:bold">TOTAL</span>
+        <span style="font-size:12px;font-weight:bold">R$ 539,70</span>
+      </div>
+
+      <!-- Calcular frete -->
+      <div class="box fill" style="text-align:left;font-size:8px;font-weight:bold;margin-bottom:4px;padding:5px">CALCULAR FRETE</div>
+      <div class="input-field" style="margin-bottom:4px">___ CEP: 00000-000 _____________________</div>
+      <div class="box" style="font-size:8px;margin-bottom:6px">[ Calcular ]</div>
+
+      <!-- Opções frete (placeholder) -->
+      <div class="box" style="text-align:left;font-size:8px;margin-bottom:4px;padding:5px;border-style:dashed">
+        ○ PAC — R$ 0,00 — 5 a 8 dias úteis<br>
+        ○ SEDEX — R$ 0,00 — 2 a 3 dias úteis<br>
+        ● Frete Grátis (acima R$200)
+      </div>
+
+      <div class="box dark" style="font-size:10px;font-weight:bold;padding:10px;margin-bottom:4px">[ BTN: FINALIZAR COMPRA → ]</div>
+      <div class="box" style="font-size:8px;padding:5px">← Continuar comprando</div>
+      <div class="box fill" style="font-size:7px;margin-top:4px;padding:5px">🔒 Compra 100% segura<br>SSL · PagSeguro · Stripe</div>
+    </div>
+
+  </div>
+</div>
+
+<!-- TELA 2: ENDEREÇO -->
+<div class="sec">
+  <span class="sec-tag">TELA 2 DE 4 — ENDEREÇO DE ENTREGA</span>
+  <div class="inner row" style="align-items:flex-start">
+    <div class="f3 col">
+      <div class="box fill" style="font-size:10px;font-weight:bold;text-align:left;padding:6px">📍 Endereço de Entrega</div>
+      <div class="row">
+        <div class="col f1"><div class="label">Nome</div><div class="input-field">_______________________</div></div>
+        <div class="col f1"><div class="label">Sobrenome</div><div class="input-field">_______________________</div></div>
+      </div>
+      <div class="row">
+        <div class="col f1"><div class="label">CEP</div><div class="input-field">00000-000</div></div>
+        <div class="col f2"><div class="label">Rua / Logradouro</div><div class="input-field">________________________</div></div>
+      </div>
+      <div class="row">
+        <div class="col f1"><div class="label">Número</div><div class="input-field">____</div></div>
+        <div class="col f2"><div class="label">Complemento</div><div class="input-field">_____________________</div></div>
+      </div>
+      <div class="row">
+        <div class="col f1"><div class="label">Bairro</div><div class="input-field">_______________</div></div>
+        <div class="col f1"><div class="label">Cidade</div><div class="input-field">_______________</div></div>
+        <div class="col" style="width:60px"><div class="label">UF</div><div class="input-field">SP ▼</div></div>
+      </div>
+      <div class="row" style="margin-bottom:0">
+        <div class="box dark f1" style="font-size:9px;padding:8px">[ BTN: Continuar → Pagamento ]</div>
+        <div class="box f1" style="font-size:9px;padding:8px">← Voltar ao Carrinho</div>
+      </div>
+    </div>
+    <!-- Mini resumo -->
+    <div class="f1 col" style="border:1.5px solid #333;padding:8px">
+      <div class="box fill" style="font-size:9px;font-weight:bold;margin-bottom:4px">RESUMO (3 itens)</div>
+      <div style="font-size:8px;padding:3px 0;border-bottom:1px dashed #ccc">Jaqueta de Couro Vintage · R$ 289,90</div>
+      <div style="font-size:8px;padding:3px 0;border-bottom:1px dashed #ccc">Calça Jeans High Waist · R$ 159,90</div>
+      <div style="font-size:8px;padding:3px 0;border-bottom:1px dashed #ccc">Óculos Vintage Aviador · R$ 89,90</div>
+      <hr class="divider">
+      <div class="row" style="justify-content:space-between;margin-bottom:0">
+        <strong style="font-size:10px">TOTAL</strong><strong style="font-size:10px">R$ 539,70</strong>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- TELA 3: PAGAMENTO -->
+<div class="sec">
+  <span class="sec-tag">TELA 3 DE 4 — PAGAMENTO</span>
+  <div class="inner row" style="align-items:flex-start">
+    <div class="f3 col">
+      <div class="box fill" style="font-size:10px;font-weight:bold;text-align:left;padding:6px">💳 Forma de Pagamento</div>
+      <!-- Tabs de pagamento -->
+      <div class="row" style="margin-bottom:6px">
+        <div class="box dark f1" style="font-size:8px;padding:6px;font-weight:bold">[ Cartão Crédito ]</div>
+        <div class="box f1" style="font-size:8px;padding:6px">[ Cartão Débito ]</div>
+        <div class="box f1" style="font-size:8px;padding:6px">[ PIX ]</div>
+        <div class="box f1" style="font-size:8px;padding:6px">[ Boleto ]</div>
+      </div>
+      <!-- Formulário cartão -->
+      <div class="label">Número do cartão</div>
+      <div class="input-field" style="margin-bottom:5px">0000 0000 0000 0000 &nbsp;&nbsp; [Bandeira]</div>
+      <div class="label">Nome no cartão</div>
+      <div class="input-field" style="margin-bottom:5px">NOME COMO NO CARTÃO</div>
+      <div class="row">
+        <div class="col f1"><div class="label">Validade</div><div class="input-field">MM/AA</div></div>
+        <div class="col f1"><div class="label">CVV</div><div class="input-field">● ● ●</div></div>
+        <div class="col f2"><div class="label">Parcelas</div><div class="input-field">1x de R$ 539,70 sem juros ▼</div></div>
+      </div>
+      <div class="row" style="margin-top:4px">
+        <div class="box dark f1" style="font-size:10px;font-weight:bold;padding:9px">[ BTN: CONFIRMAR PAGAMENTO ]</div>
+        <div class="box f1" style="font-size:9px;padding:9px">← Voltar</div>
+      </div>
+    </div>
+    <div class="f1 col" style="border:1.5px solid #333;padding:8px">
+      <div class="box fill" style="font-size:9px;font-weight:bold;margin-bottom:4px">RESUMO FINAL</div>
+      <div style="font-size:8px;padding:3px 0;border-bottom:1px dashed #ccc">3 itens · R$ 539,70</div>
+      <div style="font-size:8px;padding:3px 0;border-bottom:1px dashed #ccc">Frete: Grátis</div>
+      <div style="font-size:8px;padding:3px 0;border-bottom:1px dashed #ccc">Desconto: R$ 0,00</div>
+      <hr class="divider">
+      <div class="row" style="justify-content:space-between;margin-bottom:4px">
+        <strong style="font-size:10px">TOTAL</strong><strong style="font-size:10px">R$ 539,70</strong>
+      </div>
+      <div class="box fill" style="font-size:7px;padding:5px">🔒 Pagamento criptografado<br>Certificado SSL</div>
+    </div>
+  </div>
+</div>
+
+<!-- TELA 4: CONFIRMAÇÃO -->
+<div class="sec">
+  <span class="sec-tag">TELA 4 DE 4 — PEDIDO CONFIRMADO</span>
+  <div class="inner col" style="align-items:center;gap:6px;padding:10px">
+    <div style="border:2px solid #333;width:50px;height:50px;display:flex;align-items:center;justify-content:center;font-size:22px">✓</div>
+    <div class="box" style="font-size:14px;font-weight:bold;padding:8px;width:100%;max-width:400px">Pedido Confirmado!</div>
+    <div class="box" style="font-size:9px;color:#666;max-width:400px;width:100%">Número do pedido: <strong>#VH-000000</strong><br>Um e-mail de confirmação foi enviado para você.</div>
+    <div class="row" style="max-width:400px;width:100%">
+      <div class="box dark f1" style="font-size:9px;padding:7px">[ Acompanhar Pedido ]</div>
+      <div class="box f1" style="font-size:9px;padding:7px">[ Voltar à Loja ]</div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

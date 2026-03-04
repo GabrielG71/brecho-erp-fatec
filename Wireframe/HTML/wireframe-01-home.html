@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Wireframe 01 – Home</title>
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Courier New',monospace;font-size:11px;background:#fff;color:#111;padding:24px}
+  @page{size:A4 landscape;margin:15mm}
+  @media print{body{padding:0}.no-print{display:none}}
+
+  /* helpers */
+  .wf-title{font-size:15px;font-weight:bold;text-transform:uppercase;letter-spacing:2px;border-bottom:2px solid #000;padding-bottom:6px;margin-bottom:4px}
+  .wf-sub{font-size:9px;color:#666;margin-bottom:18px}
+  .label{font-size:8px;font-weight:bold;text-transform:uppercase;color:#555;margin-bottom:3px;letter-spacing:.5px}
+  .sec{border:2px solid #111;margin-bottom:10px;padding:8px;position:relative}
+  .sec-tag{position:absolute;top:-1px;left:-1px;background:#111;color:#fff;font-size:8px;font-weight:bold;padding:2px 7px;letter-spacing:.5px;text-transform:uppercase}
+  .inner{margin-top:14px}
+  .box{border:1.5px solid #333;padding:5px 8px;text-align:center;font-size:9px;line-height:1.4;background:#fff}
+  .box.fill{background:#d0d0d0}
+  .box.dark{background:#aaa}
+  .row{display:flex;gap:6px;margin-bottom:6px;align-items:stretch}
+  .col{display:flex;flex-direction:column;gap:6px}
+  .f1{flex:1}.f2{flex:2}.f3{flex:3}.f4{flex:4}.f5{flex:5}
+  .img{border:1.5px solid #333;background:repeating-linear-gradient(45deg,#e0e0e0,#e0e0e0 4px,#f8f8f8 4px,#f8f8f8 9px);display:flex;align-items:center;justify-content:center;font-size:8px;color:#666;text-align:center}
+  .circle{width:28px;height:28px;border:1.5px solid #333;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:7px;flex-shrink:0}
+  .icon-row{display:flex;gap:5px;align-items:center}
+  /* card produto */
+  .pcard{border:1.5px solid #333;flex:1;display:flex;flex-direction:column}
+  .pcard .pimg{height:60px}
+  .pcard .pbody{padding:5px 6px;display:flex;flex-direction:column;gap:3px}
+  .badge{border:1.5px solid #333;font-size:7px;padding:1px 5px;display:inline-block}
+  .badge.fill{background:#aaa}
+  /* footer cols */
+  .fcol{flex:1;border:1.5px solid #333;padding:6px}
+  .frow{font-size:8px;border-bottom:1px dashed #bbb;padding:2px 0}
+</style>
+</head>
+<body>
+
+<div class="wf-title no-print">VINTAGEHUB · WIREFRAME 01 — HOME PAGE</div>
+<div class="wf-sub no-print">Esboço estrutural · Imprimível via Ctrl+P</div>
+
+<!-- ═══ NAVBAR ═══ -->
+<div class="sec">
+  <span class="sec-tag">NAVBAR</span>
+  <div class="inner row" style="align-items:center">
+    <!-- Logo -->
+    <div class="box fill" style="width:110px;padding:8px;font-size:10px;font-weight:bold">⊞ VintageHub<br><span style="font-size:7px;font-weight:normal">Logo + Ícone</span></div>
+    <!-- Nav links -->
+    <div class="row f3" style="margin-bottom:0;gap:4px">
+      <div class="box f1">Novidades</div>
+      <div class="box f1">Feminino</div>
+      <div class="box f1">Masculino</div>
+      <div class="box f1">Acessórios</div>
+      <div class="box f1">Sobre</div>
+    </div>
+    <!-- Ações -->
+    <div class="row" style="margin-bottom:0;gap:5px;align-items:center">
+      <div class="circle">🔍</div>
+      <div class="circle">♡</div>
+      <div class="circle">👤</div>
+      <div class="circle">🛒<br><span style="font-size:6px">Badge</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ HERO ═══ -->
+<div class="sec">
+  <span class="sec-tag">HERO — BANNER PRINCIPAL</span>
+  <div class="inner row" style="min-height:110px">
+    <!-- Texto lado esquerdo -->
+    <div class="col f2" style="justify-content:center;gap:6px">
+      <div class="box badge fill" style="width:130px;text-align:left">✦ Peças únicas e autênticas</div>
+      <div class="box" style="font-size:13px;font-weight:bold;padding:10px;text-align:left;line-height:1.5">
+        Título principal H1<br>
+        <span style="font-size:9px;font-weight:normal;color:#555">Subtítulo de destaque em cor secundária</span>
+      </div>
+      <div class="box" style="text-align:left;font-size:8px;padding:6px">Parágrafo descritivo — texto de apoio ao headline.<br>Moda sustentável, peças únicas com história.</div>
+      <div class="row" style="margin-bottom:0">
+        <div class="box dark f1" style="font-size:9px;padding:7px">[ BTN PRIMÁRIO: Ver Coleção ]</div>
+        <div class="box f1" style="font-size:9px;padding:7px">[ BTN SECUNDÁRIO: Saiba Mais ]</div>
+      </div>
+    </div>
+    <!-- Imagens lado direito -->
+    <div class="col f2">
+      <div class="row" style="margin-bottom:0;height:100%">
+        <div class="img f3" style="min-height:90px">Foto<br>Produto 1<br>(maior)</div>
+        <div class="col f2" style="gap:6px">
+          <div class="img" style="flex:1;min-height:40px">Foto<br>Produto 2</div>
+          <div class="img" style="flex:1;min-height:40px">Foto<br>Produto 3</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ FEATURES ═══ -->
+<div class="sec">
+  <span class="sec-tag">FAIXA DE FEATURES / DIFERENCIAIS</span>
+  <div class="inner row">
+    <div class="box f1 col" style="align-items:center;gap:4px;padding:8px">
+      <div class="circle" style="width:36px;height:36px;background:#d0d0d0">♻</div>
+      <div style="font-weight:bold;font-size:9px">Sustentável</div>
+      <div style="font-size:8px;color:#555;text-align:center">Texto breve descritivo<br>da feature</div>
+    </div>
+    <div class="box f1 col" style="align-items:center;gap:4px;padding:8px">
+      <div class="circle" style="width:36px;height:36px;background:#d0d0d0">✔</div>
+      <div style="font-weight:bold;font-size:9px">Qualidade Garantida</div>
+      <div style="font-size:8px;color:#555;text-align:center">Texto breve descritivo<br>da feature</div>
+    </div>
+    <div class="box f1 col" style="align-items:center;gap:4px;padding:8px">
+      <div class="circle" style="width:36px;height:36px;background:#d0d0d0">🚚</div>
+      <div style="font-weight:bold;font-size:9px">Entrega Rápida</div>
+      <div style="font-size:8px;color:#555;text-align:center">Texto breve descritivo<br>da feature</div>
+    </div>
+    <div class="box f1 col" style="align-items:center;gap:4px;padding:8px">
+      <div class="circle" style="width:36px;height:36px;background:#d0d0d0">%</div>
+      <div style="font-weight:bold;font-size:9px">Preços Justos</div>
+      <div style="font-size:8px;color:#555;text-align:center">Texto breve descritivo<br>da feature</div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ DESTAQUES DA SEMANA ═══ -->
+<div class="sec">
+  <span class="sec-tag">SEÇÃO — DESTAQUES DA SEMANA</span>
+  <div class="inner">
+    <div class="row" style="align-items:center;margin-bottom:8px">
+      <div class="box f1" style="font-size:12px;font-weight:bold;text-align:center;padding:6px">Destaques da Semana</div>
+    </div>
+    <div class="box" style="text-align:center;margin-bottom:8px;font-size:8px;color:#666">Subtítulo — Peças cuidadosamente selecionadas para você</div>
+    <!-- Grid 4 cards -->
+    <div class="row">
+      <div class="pcard">
+        <div class="img pimg">Foto Produto</div>
+        <div class="pbody">
+          <div class="badge fill">Ótimo estado</div>
+          <div class="box" style="text-align:left;font-size:8px">Categoria (ex: Jaquetas)</div>
+          <div class="box" style="text-align:left;font-size:9px;font-weight:bold">Nome do Produto</div>
+          <div class="row" style="margin-bottom:0;gap:4px;align-items:center">
+            <div class="box fill" style="font-size:9px;font-weight:bold">R$ 000,00</div>
+            <div class="box" style="font-size:8px;color:#888;text-decoration:line-through">R$ 000</div>
+          </div>
+          <div class="box dark" style="font-size:8px;padding:5px">[ + Adicionar ao Carrinho ]</div>
+        </div>
+      </div>
+      <div class="pcard">
+        <div class="img pimg">Foto Produto</div>
+        <div class="pbody">
+          <div class="badge fill">Semi-novo</div>
+          <div class="box" style="text-align:left;font-size:8px">Categoria</div>
+          <div class="box" style="text-align:left;font-size:9px;font-weight:bold">Nome do Produto</div>
+          <div class="row" style="margin-bottom:0;gap:4px;align-items:center">
+            <div class="box fill" style="font-size:9px;font-weight:bold">R$ 000,00</div>
+            <div class="box" style="font-size:8px;color:#888">R$ 000</div>
+          </div>
+          <div class="box dark" style="font-size:8px;padding:5px">[ + Adicionar ao Carrinho ]</div>
+        </div>
+      </div>
+      <div class="pcard">
+        <div class="img pimg">Foto Produto</div>
+        <div class="pbody">
+          <div class="badge fill">Perfeito</div>
+          <div class="box" style="text-align:left;font-size:8px">Categoria</div>
+          <div class="box" style="text-align:left;font-size:9px;font-weight:bold">Nome do Produto</div>
+          <div class="row" style="margin-bottom:0;gap:4px;align-items:center">
+            <div class="box fill" style="font-size:9px;font-weight:bold">R$ 000,00</div>
+            <div class="box" style="font-size:8px;color:#888">—</div>
+          </div>
+          <div class="box dark" style="font-size:8px;padding:5px">[ + Adicionar ao Carrinho ]</div>
+        </div>
+      </div>
+      <div class="pcard">
+        <div class="img pimg">Foto Produto</div>
+        <div class="pbody">
+          <div class="badge fill">Bom estado</div>
+          <div class="box" style="text-align:left;font-size:8px">Categoria</div>
+          <div class="box" style="text-align:left;font-size:9px;font-weight:bold">Nome do Produto</div>
+          <div class="row" style="margin-bottom:0;gap:4px;align-items:center">
+            <div class="box fill" style="font-size:9px;font-weight:bold">R$ 000,00</div>
+            <div class="box" style="font-size:8px;color:#888">R$ 000</div>
+          </div>
+          <div class="box dark" style="font-size:8px;padding:5px">[ + Adicionar ao Carrinho ]</div>
+        </div>
+      </div>
+    </div>
+    <!-- Segunda linha de cards -->
+    <div class="row" style="margin-top:0">
+      <div class="pcard"><div class="img pimg">Foto Produto</div><div class="pbody"><div class="badge fill">Semi-novo</div><div class="box" style="text-align:left;font-size:8px">Calçados</div><div class="box" style="font-size:9px;font-weight:bold;text-align:left">Nome do Produto</div><div class="box fill" style="font-size:9px">R$ 000,00</div><div class="box dark" style="font-size:8px;padding:5px">[ + Adicionar ao Carrinho ]</div></div></div>
+      <div class="pcard"><div class="img pimg">Foto Produto</div><div class="pbody"><div class="badge fill">Perfeito</div><div class="box" style="text-align:left;font-size:8px">Acessórios</div><div class="box" style="font-size:9px;font-weight:bold;text-align:left">Nome do Produto</div><div class="box fill" style="font-size:9px">R$ 000,00</div><div class="box dark" style="font-size:8px;padding:5px">[ + Adicionar ao Carrinho ]</div></div></div>
+      <div class="pcard"><div class="img pimg">Foto Produto</div><div class="pbody"><div class="badge fill">Bom estado</div><div class="box" style="text-align:left;font-size:8px">Camisetas</div><div class="box" style="font-size:9px;font-weight:bold;text-align:left">Nome do Produto</div><div class="box fill" style="font-size:9px">R$ 000,00</div><div class="box dark" style="font-size:8px;padding:5px">[ + Adicionar ao Carrinho ]</div></div></div>
+      <div class="pcard"><div class="img pimg">Foto Produto</div><div class="pbody"><div class="badge fill">Ótimo estado</div><div class="box" style="text-align:left;font-size:8px">Blazers</div><div class="box" style="font-size:9px;font-weight:bold;text-align:left">Nome do Produto</div><div class="box fill" style="font-size:9px">R$ 000,00</div><div class="box dark" style="font-size:8px;padding:5px">[ + Adicionar ao Carrinho ]</div></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ FOOTER ═══ -->
+<div class="sec" style="background:#f0f0f0">
+  <span class="sec-tag">FOOTER</span>
+  <div class="inner row" style="align-items:flex-start">
+    <!-- Col 1: Logo + desc + redes -->
+    <div class="fcol f2">
+      <div class="box fill" style="font-weight:bold;font-size:10px;margin-bottom:5px">⊞ VintageHub · Logo</div>
+      <div class="box" style="font-size:8px;margin-bottom:5px">Descrição curta da loja.<br>Peças únicas com história.</div>
+      <div class="row" style="margin-bottom:0;gap:4px">
+        <div class="circle" style="font-size:8px">IG</div>
+        <div class="circle" style="font-size:8px">FB</div>
+        <div class="circle" style="font-size:8px">TW</div>
+      </div>
+    </div>
+    <!-- Col 2: Categorias -->
+    <div class="fcol f1">
+      <div style="font-weight:bold;margin-bottom:4px;font-size:9px">CATEGORIAS</div>
+      <div class="frow">Novidades</div>
+      <div class="frow">Feminino</div>
+      <div class="frow">Masculino</div>
+      <div class="frow">Acessórios</div>
+    </div>
+    <!-- Col 3: Ajuda -->
+    <div class="fcol f1">
+      <div style="font-weight:bold;margin-bottom:4px;font-size:9px">AJUDA</div>
+      <div class="frow">Minha Conta</div>
+      <div class="frow">Rastreamento</div>
+      <div class="frow">Trocas e devoluções</div>
+      <div class="frow">FAQ</div>
+    </div>
+    <!-- Col 4: Contato -->
+    <div class="fcol f1">
+      <div style="font-weight:bold;margin-bottom:4px;font-size:9px">CONTATO</div>
+      <div class="frow">contato@vintagehub.com</div>
+      <div class="frow">(11) 9999-9999</div>
+      <div class="frow">Seg–Sex: 9h às 18h</div>
+      <div class="frow">Sábado: 9h às 13h</div>
+    </div>
+  </div>
+  <!-- Copyright -->
+  <div class="box" style="margin-top:8px;font-size:8px;text-align:center;background:#d0d0d0">© 2026 VintageHub. Todos os direitos reservados.</div>
+</div>
+
+</body>
+</html>
